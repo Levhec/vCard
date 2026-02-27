@@ -13,45 +13,43 @@ body {
     background: #f2f2f2;
 }
 
-/* ===== INTRO LOGO (CSS only, ne bloque jamais la page) ===== */
+/* ===== INTRO NOIR LEVHEC ===== */
+
 #intro {
     position: fixed;
     inset: 0;
-    background: #B08D00;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 60%, #000000 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-
-    /* l'intro se retire toute seule */
     animation: introHide 1.9s ease forwards;
 }
 
 #intro img {
-    width: 220px;
-    max-width: 70vw;
+    width: 260px;
+    max-width: 75vw;
     height: auto;
     opacity: 0;
-    transform: scale(0.70);
-    filter: drop-shadow(0 14px 22px rgba(0,0,0,.28));
-
+    transform: scale(0.75);
+    filter: drop-shadow(0 18px 30px rgba(0,0,0,0.45));
     animation: logoZoom 1.6s cubic-bezier(.2,.9,.2,1) forwards;
 }
 
 @keyframes logoZoom {
-    0%   { opacity: 0; transform: scale(0.70); }
+    0%   { opacity: 0; transform: scale(0.75); }
     35%  { opacity: 1; }
     100% { opacity: 1; transform: scale(1.15); }
 }
 
-/* À la fin : invisible + non cliquable */
 @keyframes introHide {
-    0%   { opacity: 1; visibility: visible; pointer-events: all; }
-    80%  { opacity: 1; visibility: visible; }
+    0%   { opacity: 1; visibility: visible; }
+    80%  { opacity: 1; }
     100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
 /* ===== PAGE ===== */
+
 .header {
     background: #B08D00;
     color: white;
@@ -124,7 +122,8 @@ body {
     text-decoration: none;
 }
 
-/* Boutons flottants premium */
+/* Boutons flottants */
+
 .floating, .share-floating {
     position: fixed;
     right: 25px;
@@ -168,13 +167,13 @@ svg {
 
 <body>
 
-<!-- INTRO LOGO -->
+<!-- INTRO -->
 <div id="intro">
     <img src="logo_levhec.png" alt="LEVHEC Logo">
 </div>
 
 <div class="header">
-    <img src="Photo_LCH.png" class="avatar" alt="Photo Laurent Chekly">
+    <img src="Photo_LCH.png" class="avatar">
     <h1>Laurent CHEKLY</h1>
     <p>Manager de Transition</p>
     <p>Directeur Financier</p>
@@ -193,18 +192,16 @@ svg {
     <div class="item">🌐 <a href="https://www.levhec.com">www.levhec.com</a></div>
 </div>
 
-<!-- Partager -->
-<button class="share-floating" onclick="shareContact()" aria-label="Partager le contact">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7-4.11A2.5 2.5 0 1 0 14.5 5a2.5 2.5 0 0 0 .04.44l-7 4.11a2.5 2.5 0 1 0 0 3.9l7.13 4.19A2.5 2.5 0 1 0 18 16.08z"/>
-  </svg>
+<button class="share-floating" onclick="shareContact()" aria-label="Partager">
+<svg viewBox="0 0 24 24">
+<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7-4.11A2.5 2.5 0 1 0 14.5 5a2.5 2.5 0 0 0 .04.44l-7 4.11a2.5 2.5 0 1 0 0 3.9l7.13 4.19A2.5 2.5 0 1 0 18 16.08z"/>
+</svg>
 </button>
 
-<!-- Télécharger vCard -->
-<a class="floating" href="lch.vcf" aria-label="Télécharger la vCard">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"/>
-  </svg>
+<a class="floating" href="lch.vcf" aria-label="Télécharger">
+<svg viewBox="0 0 24 24">
+<path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"/>
+</svg>
 </a>
 
 <script>
