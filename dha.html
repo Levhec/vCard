@@ -2,50 +2,126 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>David HAYAT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<title>David HAYAT</title>
+
 <style>
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f6f8;
     margin: 0;
-    padding: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f2f2f2;
 }
-.card {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: auto;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+.header {
+    background: #b39b0a;
+    color: white;
+    text-align: center;
+    padding: 60px 20px 40px 20px;
 }
-h1 {
-    margin-bottom: 5px;
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 20px;
 }
-.subtitle {
-    color: #555;
-    margin-bottom: 25px;
+
+.header h1 {
+    margin: 10px 0 5px;
+    font-size: 26px;
 }
-.button {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #000;
+
+.header p {
+    margin: 5px 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.actions {
+    display: flex;
+    background: #a88f09;
+    text-align: center;
+}
+
+.actions a {
+    flex: 1;
+    padding: 18px 0;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    font-size: 13px;
+    border-right: 1px solid rgba(255,255,255,0.2);
 }
-.button:hover {
-    background-color: #333;
+
+.actions a:last-child {
+    border-right: none;
+}
+
+.section {
+    padding: 25px;
+    background: white;
+    margin-top: 10px;
+}
+
+.section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.item {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.floating {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #b39b0a;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 </style>
 </head>
+
 <body>
-<div class="card">
-<h1>David HAYAT</h1>
-<div class="subtitle">Management de Transition<br>LEVHEC ADVISORY</div>
-<a class="button" href="dha.vcf">Ajouter aux contacts</a>
+
+<div class="header">
+    <img src="Photo_DHA.png" class="avatar">
+    <h1>David HAYAT</h1>
+    <p>Manager de Transition</p>
+    <p>Contrôleur de Gestion DATA</p>
 </div>
+
+<div class="actions">
+    <a href="tel:+33 6 60 61 87 01">APPELER</a>
+    <a href="mailto:david.hayat@levhec.com">E-MAIL</a>
+</div>
+
+<div class="section">
+    <h2>LEVHEC ADVISORY</h2>
+    <div class="item">📞 06 60 61 87 01</div>
+    <div class="item">✉ david.hayat@levhec.com</div>
+    <div class="item">📍 Paris, France</div>
+    <div class="item">🌐 <a href="https://www.levhec.com">www.levhec.com</a></div>
+</div>
+
+<a class="floating" href="lch.vcf">+</a>
+
 </body>
 </html>
