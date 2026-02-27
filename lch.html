@@ -7,119 +7,162 @@
 <title>Laurent CHEKLY</title>
 
 <style>
-/* Page masquée au départ */
-body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:#f2f2f2;
-    opacity:0;
-    transition:opacity .5s ease;
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f2f2f2;
 }
 
-/* Intro logo */
-#intro{
-    position:fixed;
-    inset:0;
-    background:#B08D00;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+/* ===== INTRO LOGO (CSS only, ne bloque jamais la page) ===== */
+#intro {
+    position: fixed;
+    inset: 0;
+    background: #B08D00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    /* l'intro se retire toute seule */
+    animation: introHide 1.9s ease forwards;
 }
 
-/* Logo : plus grand + ombre + bordure (debug) */
-#intro img{
-    width:200px;
-    max-width:70vw;
-    height:auto;
-    opacity:0;
-    transform:scale(.65);
+#intro img {
+    width: 220px;
+    max-width: 70vw;
+    height: auto;
+    opacity: 0;
+    transform: scale(0.70);
     filter: drop-shadow(0 14px 22px rgba(0,0,0,.28));
-    /* DEBUG visuel (tu peux enlever après) */
-    /* border: 1px dashed rgba(255,255,255,.6); */
-    animation:logoZoom 1.6s cubic-bezier(.2,.9,.2,1) forwards;
+
+    animation: logoZoom 1.6s cubic-bezier(.2,.9,.2,1) forwards;
 }
 
-@keyframes logoZoom{
-    0%   {opacity:0; transform:scale(.65);}
-    35%  {opacity:1;}
-    100% {opacity:1; transform:scale(1.15);}
+@keyframes logoZoom {
+    0%   { opacity: 0; transform: scale(0.70); }
+    35%  { opacity: 1; }
+    100% { opacity: 1; transform: scale(1.15); }
 }
 
-/* Contenu */
-.header{
-    background:#B08D00;
-    color:#fff;
-    text-align:center;
-    padding:60px 20px 40px 20px;
+/* À la fin : invisible + non cliquable */
+@keyframes introHide {
+    0%   { opacity: 1; visibility: visible; pointer-events: all; }
+    80%  { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
-.avatar{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #fff;
-    margin-bottom:20px;
+/* ===== PAGE ===== */
+.header {
+    background: #B08D00;
+    color: white;
+    text-align: center;
+    padding: 60px 20px 40px 20px;
 }
 
-.header h1{margin:10px 0 5px; font-size:26px;}
-.header p{margin:5px 0; font-size:16px; opacity:.9;}
-
-.actions{
-    display:flex;
-    background:#9C7C00;
-    text-align:center;
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 20px;
 }
 
-.actions a{
-    flex:1;
-    padding:18px 0;
-    color:#fff;
-    text-decoration:none;
-    font-size:13px;
-    border-right:1px solid rgba(255,255,255,.2);
-    transition: background .2s ease;
+.header h1 {
+    margin: 10px 0 5px;
+    font-size: 26px;
 }
-.actions a:hover{background:rgba(255,255,255,.10);}
-.actions a:last-child{border-right:none;}
 
-.section{
-    padding:25px;
-    background:#fff;
-    margin-top:10px;
+.header p {
+    margin: 5px 0;
+    font-size: 16px;
+    opacity: 0.9;
 }
-.section h2{font-size:18px; margin-bottom:10px;}
-.item{margin-bottom:15px; font-size:15px;}
-.item a{color:#000; text-decoration:none;}
+
+.actions {
+    display: flex;
+    background: #9C7C00;
+    text-align: center;
+}
+
+.actions a {
+    flex: 1;
+    padding: 18px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    transition: background 0.2s ease;
+}
+
+.actions a:hover {
+    background: rgba(255,255,255,0.10);
+}
+
+.actions a:last-child {
+    border-right: none;
+}
+
+.section {
+    padding: 25px;
+    background: white;
+    margin-top: 10px;
+}
+
+.section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.item {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.item a {
+    color: #000;
+    text-decoration: none;
+}
 
 /* Boutons flottants premium */
-.floating, .share-floating{
-    position:fixed;
-    right:25px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
-    box-shadow:0 10px 20px rgba(0,0,0,.2);
-    transition: transform .18s ease, box-shadow .18s ease;
-}
-.floating:hover,.share-floating:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 25px rgba(0,0,0,.3);
-}
-.floating{bottom:25px; background:#B08D00; text-decoration:none;}
-.share-floating{
-    bottom:100px;
-    background:#9C7C00;
-    border:none;
-    cursor:pointer;
+.floating, .share-floating {
+    position: fixed;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-svg{width:26px; height:26px; fill:#fff;}
+.floating:hover,
+.share-floating:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.floating {
+    bottom: 25px;
+    background: #B08D00;
+    text-decoration: none;
+}
+
+.share-floating {
+    bottom: 100px;
+    background: #9C7C00;
+    border: none;
+    cursor: pointer;
+}
+
+svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+}
 </style>
 </head>
 
@@ -152,35 +195,19 @@ svg{width:26px; height:26px; fill:#fff;}
 
 <!-- Partager -->
 <button class="share-floating" onclick="shareContact()" aria-label="Partager le contact">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7-4.11A2.5 2.5 0 1 0 14.5 5a2.5 2.5 0 0 0 .04.44l-7 4.11a2.5 2.5 0 1 0 0 3.9l7.13 4.19A2.5 2.5 0 1 0 18 16.08z"/>
-</svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7-4.11A2.5 2.5 0 1 0 14.5 5a2.5 2.5 0 0 0 .04.44l-7 4.11a2.5 2.5 0 1 0 0 3.9l7.13 4.19A2.5 2.5 0 1 0 18 16.08z"/>
+  </svg>
 </button>
 
 <!-- Télécharger vCard -->
 <a class="floating" href="lch.vcf" aria-label="Télécharger la vCard">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"/>
-</svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"/>
+  </svg>
 </a>
 
 <script>
-/* On attend un peu pour laisser jouer l’animation, puis on affiche la page */
-window.addEventListener("load", function () {
-    // Si le logo ne charge pas, on n’attend pas : on affiche quand même
-    const logo = document.querySelector("#intro img");
-    const showPage = () => {
-        document.getElementById("intro").style.display = "none";
-        document.body.style.opacity = "1";
-    };
-
-    // Affichage normal après l’animation
-    setTimeout(showPage, 1600);
-
-    // Si erreur de chargement logo, on affiche immédiatement
-    logo.addEventListener("error", showPage, { once: true });
-});
-
 function shareContact() {
     if (navigator.share) {
         navigator.share({
