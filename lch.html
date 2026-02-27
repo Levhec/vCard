@@ -15,8 +15,9 @@ body {
     transition: opacity 0.6s ease;
 }
 
-/* Loader */
-#loader {
+/* ===== INTRO LOGO ===== */
+
+#intro {
     position: fixed;
     inset: 0;
     background: #B08D00;
@@ -26,20 +27,29 @@ body {
     z-index: 9999;
 }
 
-.loader-circle {
-    width: 60px;
-    height: 60px;
-    border: 4px solid rgba(255,255,255,0.3);
-    border-top: 4px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+#intro img {
+    width: 120px;
+    opacity: 0;
+    transform: scale(0.6);
+    animation: logoZoom 1.8s ease forwards;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+@keyframes logoZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 }
 
-/* Header */
+/* ===== HEADER ===== */
+
 .header {
     background: #B08D00;
     color: white;
@@ -106,13 +116,6 @@ body {
     font-size: 15px;
 }
 
-.item a {
-    color: #000;
-    text-decoration: none;
-}
-
-/* Floating Buttons */
-
 .floating, .share-floating {
     position: fixed;
     right: 25px;
@@ -155,9 +158,9 @@ svg {
 
 <body>
 
-<!-- Loader -->
-<div id="loader">
-    <div class="loader-circle"></div>
+<!-- INTRO LOGO -->
+<div id="intro">
+    <img src="logo_levhec.png" alt="LEVHEC Logo">
 </div>
 
 <div class="header">
@@ -177,17 +180,15 @@ svg {
     <div class="item">📞 06 76 48 82 24</div>
     <div class="item">✉ laurent.chekly@levhec.com</div>
     <div class="item">📍 Paris, France</div>
-    <div class="item">🌐 <a href="https://www.levhec.com">www.levhec.com</a></div>
+    <div class="item">🌐 www.levhec.com</div>
 </div>
 
-<!-- Bouton partage SVG -->
 <button class="share-floating" onclick="shareContact()">
 <svg viewBox="0 0 24 24">
 <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7-4.11A2.5 2.5 0 1 0 14.5 5a2.5 2.5 0 0 0 .04.44l-7 4.11a2.5 2.5 0 1 0 0 3.9l7.13 4.19A2.5 2.5 0 1 0 18 16.08z"/>
 </svg>
 </button>
 
-<!-- Bouton téléchargement SVG -->
 <a class="floating" href="lch.vcf">
 <svg viewBox="0 0 24 24">
 <path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"/>
@@ -196,8 +197,10 @@ svg {
 
 <script>
 window.addEventListener("load", function(){
-    document.body.style.opacity = "1";
-    document.getElementById("loader").style.display = "none";
+    setTimeout(function(){
+        document.getElementById("intro").style.display = "none";
+        document.body.style.opacity = "1";
+    }, 1800);
 });
 
 function shareContact() {
