@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Laurent CHEKLY</title>
+
 <style>
 body {
     margin: 0;
@@ -30,7 +38,6 @@ body {
     animation: photoSpin 2.4s cubic-bezier(.16,.84,.35,1) forwards;
 }
 
-/* Animations */
 @keyframes photoSpin {
     0% { opacity: 0; transform: scale(0.6) rotate(-360deg); }
     40% { opacity: 1; }
@@ -172,3 +179,62 @@ svg {
     fill: #ECE8DF;
 }
 </style>
+</head>
+
+<body>
+
+<div id="intro">
+    <img src="logo_levhec.png" alt="LEVHEC Logo">
+</div>
+
+<div class="header">
+    <img src="Photo_LCH.png" class="avatar">
+    <h1>Laurent CHEKLY</h1>
+    <p>Manager de Transition</p>
+    <p>Directeur Financier</p>
+</div>
+
+<div class="actions">
+    <a href="tel:+33676488224">APPELER</a>
+    <a href="mailto:laurent.chekly@levhec.com">E-MAIL</a>
+</div>
+
+<div class="section">
+    <h2>LEVHEC ADVISORY</h2>
+    <p>Management de Transition</p>
+    <p>Cabinet de Conseil Opérationnel</p>
+    <div class="item">📞 06 76 48 82 24</div>
+    <div class="item">✉ laurent.chekly@levhec.com</div>
+    <div class="item">📍 Paris, France</div>
+    <div class="item">🌐 <a href="https://www.levhec-advisory.com">www.levhec-advisory.com</a></div>
+    <h2>FAIRE DE LA COMPLEXITE UN AVANTAGE STRATEGIQUE</h2>
+</div>
+
+<button class="share-floating" onclick="shareContact()">
+<svg viewBox="0 0 24 24">
+<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7-4.11A2.5 2.5 0 1 0 14.5 5a2.5 2.5 0 0 0 .04.44l-7 4.11a2.5 2.5 0 1 0 0 3.9l7.13 4.19A2.5 2.5 0 1 0 18 16.08z"/>
+</svg>
+</button>
+
+<a class="floating" href="lch.vcf">
+<svg viewBox="0 0 24 24">
+<path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"/>
+</svg>
+</a>
+
+<script>
+function shareContact() {
+    if (navigator.share) {
+        navigator.share({
+            title: "Laurent CHEKLY - LEVHEC ADVISORY",
+            text: "Voici mes coordonnées professionnelles.",
+            url: window.location.href
+        });
+    } else {
+        alert("Le partage n'est pas supporté sur ce navigateur.");
+    }
+}
+</script>
+
+</body>
+</html>
