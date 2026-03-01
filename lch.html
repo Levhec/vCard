@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Laurent CHEKLY</title>
-
 <style>
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: radial-gradient(circle at top center, #1a1a1a 0%, #0f0f0f 60%, #000000 100%);
+    background: #2B2B2B;
+    color: #ECE8DF;
 }
-/* ===== INTRO PHOTO TOURBILLON ===== */
+
+/* ===== INTRO ===== */
 
 #intro {
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 60%, #000000 100%);
+    background: #2B2B2B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,20 +30,12 @@ body {
     animation: photoSpin 2.4s cubic-bezier(.16,.84,.35,1) forwards;
 }
 
+/* Animations */
 @keyframes photoSpin {
-    0% {
-        opacity: 0;
-        transform: scale(0.6) rotate(-360deg);
-    }
-    40% {
-        opacity: 1;
-    }
-    80% {
-        transform: scale(1.1) rotate(20deg);
-    }
-    100% {
-        transform: scale(1) rotate(0deg);
-    }
+    0% { opacity: 0; transform: scale(0.6) rotate(-360deg); }
+    40% { opacity: 1; }
+    80% { transform: scale(1.1) rotate(20deg); }
+    100% { transform: scale(1) rotate(0deg); }
 }
 
 @keyframes introHide {
@@ -57,11 +43,12 @@ body {
     85%  { opacity: 1; }
     100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
-/* ===== PAGE ===== */
+
+/* ===== HEADER ===== */
 
 .header {
-    background: #B08D00;
-    color: #2b2b2b;
+    background: #B08D2F;
+    color: #2B2B2B;
     text-align: center;
     padding: 60px 20px 40px 20px;
 }
@@ -71,7 +58,7 @@ body {
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid white;
+    border: 4px solid #ECE8DF;
     margin-bottom: 20px;
 }
 
@@ -86,39 +73,40 @@ body {
     opacity: 0.9;
 }
 
+/* ===== ACTIONS ===== */
+
 .actions {
     display: flex;
-    background: #9C7C00;
-    text-align: center;
+    background: #2B2B2B;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .actions a {
     flex: 1;
     padding: 18px 0;
-    color: #2b2b2b;
+    color: #B08D2F;
     text-decoration: none;
     font-size: 13px;
-    border-right: none;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .actions a:hover {
-    background: rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.05);
+    color: #C19A3A;
 }
 
-.actions a:last-child {
-    border-right: none;
-}
+/* ===== SECTION ===== */
 
 .section {
     padding: 25px;
-    background:#2b2b2b;
-    color: #b39b0a;
+    background: #2B2B2B;
+    color: #ECE8DF;
 }
 
 .section h2 {
     font-size: 18px;
     margin-bottom: 10px;
+    color: #B08D2F;
 }
 
 .item {
@@ -127,8 +115,12 @@ body {
 }
 
 .item a {
-    color: #b39b0a;
+    color: #B08D2F;
     text-decoration: none;
+}
+
+.item a:hover {
+    color: #C19A3A;
 }
 
 /* ===== BOUTONS FLOTTANTS ===== */
@@ -142,93 +134,41 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    color: #ECE8DF;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.2s ease;
 }
 
 .floating:hover,
 .share-floating:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.35);
 }
 
 .floating {
     bottom: 25px;
-    background: #B08D00;
+    background: #B08D2F;
     text-decoration: none;
+}
+
+.floating:hover {
+    background: #C19A3A;
 }
 
 .share-floating {
     bottom: 100px;
-    background: #9C7C00;
-    border: none;
+    background: #2B2B2B;
+    border: 1px solid #B08D2F;
     cursor: pointer;
+}
+
+.share-floating:hover {
+    background: #B08D2F;
 }
 
 svg {
     width: 26px;
     height: 26px;
-    fill: white;
+    fill: #ECE8DF;
 }
 </style>
-</head>
-
-<body>
-
-<!-- INTRO -->
-<div id="intro">
-    <img src="logo_levhec.png" alt="LEVHEC Logo">
-</div>
-
-<div class="header">
-    <img src="Photo_LCH.png" class="avatar">
-    <h1>Laurent CHEKLY</h1>
-    <p>Manager de Transition</p>
-    <p>Directeur Financier</p>
-</div>
-
-<div class="actions">
-    <a href="tel:+33676488224">APPELER</a>
-    <a href="mailto:laurent.chekly@levhec.com">E-MAIL</a>
-</div>
-
-<div class="section">
-    <h2>LEVHEC ADVISORY</h2>
-    <p>Management de Transition</p>
-    <p>Cabinet de Conseil Opérationnel</p>
-    <div class="item">📞 06 76 48 82 24</div>
-    <div class="item">✉ laurent.chekly@levhec.com</div>
-    <div class="item">📍 Paris, France</div>
-    <div class="item">🌐 <a href="https://www.levhec-advisory.com">www.levhec-advisory.com</a></div>
-    <h2>FAIRE DE LA COMPLEXITE UN AVANTAGE STRATEGIQUE</h2>
-</div>
-
-<button class="share-floating" onclick="shareContact()">
-<svg viewBox="0 0 24 24">
-<path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7-4.11A2.5 2.5 0 1 0 14.5 5a2.5 2.5 0 0 0 .04.44l-7 4.11a2.5 2.5 0 1 0 0 3.9l7.13 4.19A2.5 2.5 0 1 0 18 16.08z"/>
-</svg>
-</button>
-
-<a class="floating" href="lch.vcf">
-<svg viewBox="0 0 24 24">
-<path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7z"/>
-</svg>
-</a>
-
-<script>
-function shareContact() {
-    if (navigator.share) {
-        navigator.share({
-            title: "Laurent CHEKLY - LEVHEC ADVISORY",
-            text: "Voici mes coordonnées professionnelles.",
-            url: window.location.href
-        });
-    } else {
-        alert("Le partage n'est pas supporté sur ce navigateur.");
-    }
-}
-</script>
-
-</body>
-</html>
