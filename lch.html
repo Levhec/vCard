@@ -7,6 +7,11 @@
 <title>Laurent CHEKLY</title>
 
 <style>
+
+/* =======================
+   BASE
+======================= */
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -14,7 +19,15 @@ body {
     color: #ECE8DF;
 }
 
-/* INTRO */
+svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+}
+
+/* =======================
+   INTRO
+======================= */
 
 #intro {
     position: fixed;
@@ -50,23 +63,17 @@ body {
     100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
-/* HEADER */
+/* =======================
+   HEADER
+======================= */
 
 .header {
     background: #C6A646;
     color: #2B2B2B;
     text-align: center;
-    padding: 60px 20px 40px 20px;
+    padding: 60px 20px 40px;
 }
-.header h1{
-    margin: 10px 0 6px;
-}
-.header p{
-    margin: 4px 0;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
+
 .avatar {
     width: 130px;
     height: 130px;
@@ -76,16 +83,29 @@ body {
     margin-bottom: 20px;
 }
 
-/* ACTIONS */
+.header h1 {
+    margin: 10px 0 6px;
+}
+
+.header p {
+    margin: 4px 0;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* =======================
+   ACTION BUTTONS
+======================= */
 
 .actions {
     display: flex;
-    background: #2B2B2B;
 }
 
 .actions a {
     flex: 1;
     padding: 18px 0;
+    text-align: center;
     background: linear-gradient(180deg, #B08A35 0%, #8F6C28 100%);
     color: #ECE8DF;
     text-decoration: none;
@@ -97,9 +117,12 @@ body {
 .actions a:hover {
     background: linear-gradient(180deg, #C19A42 0%, #A67C2E 100%);
 }
-/* SECTION */
 
-section {
+/* =======================
+   SECTION
+======================= */
+
+.section {
     padding: 25px;
 }
 
@@ -107,22 +130,48 @@ section {
     color: #C6A646;
 }
 
-.section p{
+.section p {
     margin: 0;
     line-height: 1.2;
 }
 
+/* Brand + Tagline */
+
+.brand {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 18px 0 0;
+}
+
+.tagline {
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    margin-top: 26px;
+    opacity: 0.85;
+}
+
+/* Contact items */
+
+.item:first-of-type {
+    margin-top: 14px;
+}
+
 .item a {
     color: #C6A646;
+    text-decoration: none;
 }
 
 .item a:hover {
     color: #D4B45A;
 }
 
-/* FLOATING BUTTONS */
+/* =======================
+   FLOATING BUTTONS
+======================= */
 
-.floating, .share-floating {
+.floating,
+.share-floating {
     position: fixed;
     right: 25px;
     width: 60px;
@@ -131,13 +180,13 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #2B2B2B;
     transition: transform 0.18s ease, background 0.2s ease;
 }
 
 .floating {
     bottom: 25px;
     background: #C6A646;
+    color: #2B2B2B;
 }
 
 .floating:hover {
@@ -156,48 +205,17 @@ section {
     color: #2B2B2B;
 }
 
-svg {
-    width: 26px;
-    height: 26px;
-    fill: currentColor;
-}
-    /* ===== TITRE MARQUE ===== */
-.brand{
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #C6A646;
-    margin: 18px 0 12px;
-}
-
-/* ===== SIGNATURE ===== */
-.tagline{
-    font-size: 13px;
-    letter-spacing: 1.2px;
-    font-weight: 500;
-    margin-top: 26px;
-    color: #ECE8DF;
-    opacity: 0.85;
-}
-.brand {
-    margin-bottom: 0;
-}
-
-.section p {
-    margin-top: 0;
-}
-
-.item:first-of-type {
-    margin-top: 14px;
-}
 </style>
 </head>
 
 <body>
 
+<!-- INTRO -->
 <div id="intro">
     <img src="logo_levhec.png" alt="LEVHEC Logo">
 </div>
 
+<!-- HEADER -->
 <div class="header">
     <img src="Photo_LCH.png" class="avatar">
     <h1>Laurent CHEKLY</h1>
@@ -205,20 +223,26 @@ svg {
     <p>Directeur Financier</p>
 </div>
 
+<!-- ACTIONS -->
 <div class="actions">
     <a href="tel:+33676488224">APPELER</a>
     <a href="mailto:laurent.chekly@levhec.com">E-MAIL</a>
 </div>
 
+<!-- SECTION -->
 <div class="section">
     <h2 class="brand">LEVHEC ADVISORY</h2>
     <p>Management de Transition</p>
     <p>Cabinet de Conseil Opérationnel</p>
+
     <div class="item">📞 06 76 48 82 24</div>
     <div class="item">✉ laurent.chekly@levhec.com</div>
     <div class="item">🌐 <a href="https://www.levhec-advisory.com">www.levhec-advisory.com</a></div>
+
     <h2 class="tagline">FAIRE DE LA COMPLEXITE UN AVANTAGE STRATEGIQUE</h2>
 </div>
+
+<!-- FLOATING BUTTONS -->
 <a href="https://www.levhec-advisory.com/vcard.vcf" class="floating" download>
     <svg viewBox="0 0 24 24">
         <path d="M12 3v10m0 0l-4-4m4 4l4-4M4 17v2h16v-2"/>
@@ -230,5 +254,6 @@ svg {
         <path d="M18 8a3 3 0 10-2.83-4H15a3 3 0 000 6c.35 0 .69-.06 1-.17l-6.9 3.45A3 3 0 006 11a3 3 0 000 2c.2.1.41.18.63.24l6.73 3.36A3 3 0 1016 17a2.9 2.9 0 00-.17-1l6.17-3.08c.3.1.63.16 1 .16a3 3 0 000-6z"/>
     </svg>
 </a>
+
 </body>
 </html>
