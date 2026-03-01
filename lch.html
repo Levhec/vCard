@@ -19,10 +19,16 @@ body {
     color: #ECE8DF;
 }
 
+/* SVG FIX */
 svg {
     width: 26px;
     height: 26px;
-    fill: currentColor;
+    display: block;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 /* =======================
@@ -135,8 +141,6 @@ svg {
     line-height: 1.2;
 }
 
-/* Brand + Tagline */
-
 .brand {
     font-size: 18px;
     letter-spacing: 1px;
@@ -150,8 +154,6 @@ svg {
     margin-top: 26px;
     opacity: 0.85;
 }
-
-/* Contact items */
 
 .item:first-of-type {
     margin-top: 14px;
@@ -210,12 +212,10 @@ svg {
 
 <body>
 
-<!-- INTRO -->
 <div id="intro">
     <img src="logo_levhec.png" alt="LEVHEC Logo">
 </div>
 
-<!-- HEADER -->
 <div class="header">
     <img src="Photo_LCH.png" class="avatar">
     <h1>Laurent CHEKLY</h1>
@@ -223,13 +223,11 @@ svg {
     <p>Directeur Financier</p>
 </div>
 
-<!-- ACTIONS -->
 <div class="actions">
     <a href="tel:+33676488224">APPELER</a>
     <a href="mailto:laurent.chekly@levhec.com">E-MAIL</a>
 </div>
 
-<!-- SECTION -->
 <div class="section">
     <h2 class="brand">LEVHEC ADVISORY</h2>
     <p>Management de Transition</p>
@@ -242,16 +240,23 @@ svg {
     <h2 class="tagline">FAIRE DE LA COMPLEXITE UN AVANTAGE STRATEGIQUE</h2>
 </div>
 
-<!-- FLOATING BUTTONS -->
+<!-- DOWNLOAD BUTTON -->
 <a href="https://www.levhec-advisory.com/vcard.vcf" class="floating" download>
     <svg viewBox="0 0 24 24">
-        <path d="M12 3v10m0 0l-4-4m4 4l4-4M4 17v2h16v-2"/>
+        <line x1="12" y1="3" x2="12" y2="14"/>
+        <polyline points="6 10 12 16 18 10"/>
+        <line x1="4" y1="20" x2="20" y2="20"/>
     </svg>
 </a>
 
+<!-- SHARE BUTTON -->
 <a href="#" class="share-floating" onclick="navigator.share && navigator.share({title:'Laurent CHEKLY', url:window.location.href}); return false;">
     <svg viewBox="0 0 24 24">
-        <path d="M18 8a3 3 0 10-2.83-4H15a3 3 0 000 6c.35 0 .69-.06 1-.17l-6.9 3.45A3 3 0 006 11a3 3 0 000 2c.2.1.41.18.63.24l6.73 3.36A3 3 0 1016 17a2.9 2.9 0 00-.17-1l6.17-3.08c.3.1.63.16 1 .16a3 3 0 000-6z"/>
+        <circle cx="18" cy="5" r="3"/>
+        <circle cx="6" cy="12" r="3"/>
+        <circle cx="18" cy="19" r="3"/>
+        <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/>
+        <line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>
     </svg>
 </a>
 
