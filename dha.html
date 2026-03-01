@@ -7,17 +7,76 @@
 <title>David HAYAT</title>
 
 <style>
+
+/* =======================
+   BASE
+======================= */
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #f2f2f2;
+    background: #2B2B2B;
+    color: #ECE8DF;
 }
 
+svg {
+    width: 26px;
+    height: 26px;
+    display: block;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =======================
+   INTRO
+======================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    background: #2B2B2B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: introHide 2.4s ease forwards;
+}
+
+#intro img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(0.6) rotate(-360deg);
+    animation: photoSpin 2.4s cubic-bezier(.16,.84,.35,1) forwards;
+}
+
+@keyframes photoSpin {
+    0% { opacity: 0; transform: scale(0.6) rotate(-360deg); }
+    40% { opacity: 1; }
+    80% { transform: scale(1.1) rotate(20deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes introHide {
+    0%   { opacity: 1; visibility: visible; }
+    85%  { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+/* =======================
+   HEADER
+======================= */
+
 .header {
-    background: #b39b0a;
-    color: white;
+    background: #C6A646;
+    color: #2B2B2B;
     text-align: center;
-    padding: 60px 20px 40px 20px;
+    padding: 60px 20px 40px;
 }
 
 .avatar {
@@ -25,81 +84,136 @@ body {
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid white;
+    border: 4px solid #ECE8DF;
     margin-bottom: 20px;
 }
 
 .header h1 {
-    margin: 10px 0 5px;
-    font-size: 26px;
+    margin: 10px 0 6px;
 }
 
 .header p {
-    margin: 5px 0;
-    font-size: 16px;
-    opacity: 0.9;
+    margin: 4px 0;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
+
+/* =======================
+   ACTION BUTTONS
+======================= */
 
 .actions {
     display: flex;
-    background: #a88f09;
-    text-align: center;
 }
 
 .actions a {
     flex: 1;
     padding: 18px 0;
-    color: white;
+    text-align: center;
+    background: linear-gradient(180deg, #B08A35 0%, #8F6C28 100%);
+    color: #ECE8DF;
     text-decoration: none;
     font-size: 13px;
-    border-right: 1px solid rgba(255,255,255,0.2);
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
-.actions a:last-child {
-    border-right: none;
+.actions a:hover {
+    background: linear-gradient(180deg, #C19A42 0%, #A67C2E 100%);
 }
+
+/* =======================
+   SECTION
+======================= */
 
 .section {
     padding: 25px;
-    background: white;
-    margin-top: 10px;
 }
 
 .section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    color: #C6A646;
 }
 
-.item {
-    margin-bottom: 15px;
-    font-size: 15px;
+.section p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.brand {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 18px 0 0;
+}
+
+.tagline {
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    margin-top: 26px;
+    opacity: 0.85;
+}
+
+.item:first-of-type {
+    margin-top: 14px;
 }
 
 .item a {
-    color: #000;
+    color: #C6A646;
     text-decoration: none;
 }
 
-.floating {
+.item a:hover {
+    color: #D4B45A;
+}
+
+/* =======================
+   FLOATING BUTTONS
+======================= */
+
+.floating,
+.share-floating {
     position: fixed;
-    bottom: 25px;
     right: 25px;
-    background: #b39b0a;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.18s ease, background 0.2s ease;
 }
+
+.floating {
+    bottom: 25px;
+    background: #C6A646;
+    color: #2B2B2B;
+}
+
+.floating:hover {
+    background: #D4B45A;
+}
+
+.share-floating {
+    bottom: 100px;
+    background: #2B2B2B;
+    border: 1px solid #C6A646;
+    color: #ECE8DF;
+}
+
+.share-floating:hover {
+    background: #C6A646;
+    color: #2B2B2B;
+}
+
 </style>
 </head>
 
 <body>
+
+<div id="intro">
+    <img src="logo_levhec.png" alt="LEVHEC Logo">
+</div>
 
 <div class="header">
     <img src="Photo_DHA.png" class="avatar">
@@ -109,19 +223,39 @@ body {
 </div>
 
 <div class="actions">
-    <a href="tel:+33 6 60 61 87 01">APPELER</a>
+    <a href="tel:+33660618701">APPELER</a>
     <a href="mailto:david.hayat@levhec.com">E-MAIL</a>
 </div>
 
 <div class="section">
-    <h2>LEVHEC ADVISORY</h2>
+    <h2 class="brand">LEVHEC ADVISORY</h2>
+    <p>Management de Transition</p>
+    <p>Cabinet de Conseil Opérationnel</p>
+
     <div class="item">📞 06 60 61 87 01</div>
     <div class="item">✉ david.hayat@levhec.com</div>
-    <div class="item">📍 Paris, France</div>
-    <div class="item">🌐 <a href="https://www.levhec.com">www.levhec.com</a></div>
+    <div class="item">🌐 <a href="https://www.levhec-advisory.com">www.levhec-advisory.com</a></div>
+
+    <h2 class="tagline">FAIRE DE LA COMPLEXITE UN AVANTAGE STRATEGIQUE</h2>
 </div>
 
-<a class="floating" href="lch.vcf">+</a>
+<a href="https://www.levhec-advisory.com/vcard_dha.vcf" class="floating" download>
+    <svg viewBox="0 0 24 24">
+        <line x1="12" y1="3" x2="12" y2="14"/>
+        <polyline points="6 10 12 16 18 10"/>
+        <line x1="4" y1="20" x2="20" y2="20"/>
+    </svg>
+</a>
+
+<a href="#" class="share-floating" onclick="navigator.share && navigator.share({title:'David HAYAT', url:window.location.href}); return false;">
+    <svg viewBox="0 0 24 24">
+        <circle cx="18" cy="5" r="3"/>
+        <circle cx="6" cy="12" r="3"/>
+        <circle cx="18" cy="19" r="3"/>
+        <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/>
+        <line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>
+    </svg>
+</a>
 
 </body>
 </html>
