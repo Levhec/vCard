@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LEVHEC ADVISORY vous accompagne dans l'exploitation de SAGE BI Reporting pour libérer vos données et renforcer vos décisions." />
+  <meta name="robots" content="index,follow" />
+  <title>SAGE BI Reporting | LEVHEC ADVISORY</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --text: #222222;
+      --muted: #5b5b5b;
+      --gold: #b08d57;
+      --gold-dark: #8f6f3f;
+      --white: #ffffff;
+      --border: #e8dfd2;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, #f4f1ea 0%, #fbfaf7 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+</html>
